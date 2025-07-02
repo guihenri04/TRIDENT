@@ -2,7 +2,7 @@
 
 A novel Transformer-based framework for tabular data classification that employs a two-stage training paradigm: self-supervised pre-training for embedding reconstruction, followed by supervised fine-tuning. TRIDENT adapts Transformer architectures specifically for mixed tabular data containing both categorical and numerical features, with a robust focus on handling missing values
 
-## 🎯 Overview
+## Overview
 
 TRIDENT addresses the challenge of applying Transformer architectures to tabular data, especially data with high missingness, through:
 
@@ -12,7 +12,7 @@ TRIDENT addresses the challenge of applying Transformer architectures to tabular
 The framework introduces specialized components to handle tabular data heterogeneity, treating missing values as informative, learnable signals rather than noise to be imputed.
 
 
-## 🏗️ Architecture
+## Architecture
 
 ### Core Components
 
@@ -38,7 +38,7 @@ The framework introduces specialized components to handle tabular data heterogen
   - Support for class-weighted loss functions
 
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -80,7 +80,7 @@ python main.py --dataset_name vehicle_00nan --plot_losses --save_model
 python main.py --dataset_name vehicle_00nan --use_optuna --n_trials 100 --retrain_best
 ```
 
-## 📋 Command Line Arguments
+## Command Line Arguments
 
 ### Main Parameters
 - `--dataset_name`: Dataset name without .csv extension (required)
@@ -97,7 +97,7 @@ python main.py --dataset_name vehicle_00nan --use_optuna --n_trials 100 --retrai
 - `--n_trials`: Number of optimization trials (default: 50)
 - `--retrain_best`: Retrain with optimal parameters after search
 
-## ⚙️ Configuration System
+## Configuration System
 
 ### Hyperparameter Management
 
@@ -149,7 +149,7 @@ TRIDENT supports three configuration modes:
 - `WEIGHT_DECAY_PRE`: Pre-training weight decay
 - `WEIGHT_DECAY_FINE`: Fine-tuning weight decay
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 TRIDENT/
@@ -168,7 +168,7 @@ TRIDENT/
     └── generate_splits.py # Data preprocessing pipeline
 ```
 
-## 🧠 Training Methodology
+## Training Methodology
 
 ### Pre-training Phase
 1. **Dynamic Masking**: Randomly masks features with probability adjusted by existing null density
@@ -180,7 +180,7 @@ TRIDENT/
 2. **Classification Head**: Learns task-specific predictions
 3. **Class Balancing**: Optional class weights for imbalanced datasets
 
-## 📊 Evaluation Metrics
+## Evaluation Metrics
 
 The framework reports comprehensive classification metrics:
 
@@ -190,7 +190,7 @@ The framework reports comprehensive classification metrics:
 - **Recall**: Both micro and macro averaged recall
 - **Confusion Matrix**: For detailed error analysis (binary tasks)
 
-## 🎯 Example Workflows
+## Example Workflows
 
 ### Basic Training
 ```bash
@@ -219,7 +219,7 @@ python main.py --dataset_name custom_data --label_column target
 python main.py --dataset_name biodeg_00nan --output_dir ./experiments/biodeg
 ```
 
-## 🗃️ Supported Datasets
+## Supported Datasets
 
 TRIDENT has been evaluated on various tabular classification benchmarks:
 
@@ -231,11 +231,4 @@ TRIDENT has been evaluated on various tabular classification benchmarks:
 - **Electrical Grid Stability**: Binary stability prediction
 
 
-```bibtex
-@inproceedings{rigueira2024trident,
-  title={TRIDENT: Tabular Representation Inference with Dedicated Embeddings for Null Tokens},
-  author={Rigueira, Pedro B. and Mello, Victoria F. and Evangelista, Guilherme H. G. and Grossi, Caio S. and Machado, Giovana A. M. and Dutenhefner, Pedro and Meira Jr., Wagner and Pappa, Gisele L.},
-  booktitle={Brazilian Conference on Intelligent Systems (BRACIS)},
-  year={2024}
-}
-```
+
